@@ -3,16 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { NgxsModule } from '@ngxs/store';
+import { VersionsListModule } from '@nx-test/versions-list';
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     NgxsModule.forRoot([], {
       developmentMode: isDevMode(),
     }),
+    VersionsListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

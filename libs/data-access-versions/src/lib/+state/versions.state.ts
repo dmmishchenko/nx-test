@@ -38,11 +38,9 @@ export class VersionsState {
     ctx: StateContext<VersionsStateModel>,
     { versionId }: VersionsActions.GetDetail
   ) {
-    return this.versionsRepositoryToken
-      .getVersionDetail(versionId)
-      .pipe(
-        tap((response) => ctx.setState(patch({ versionDetail: response })))
-      );
+    return this.versionsRepositoryToken.getVersionDetail(versionId).pipe(
+      tap((response) => ctx.setState(patch({ versionDetail: response })))
+    );
   }
 
   @Action(VersionsActions.GetVersionMessages)

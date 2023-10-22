@@ -1,0 +1,15 @@
+<div class="resizable-wrapper">
+  <ng-container *ngFor="let version of versions$ | async; trackBy: trackByFunc">
+    <div class="version-wrapper">
+      <div
+        class="version"
+        [class.active]="version.id === (activeVersionId$ | async)"
+        (click)="changeVersion(version.id)"
+      >
+        <div>{{ version.name }}</div>
+        <div>{{ version.type }}</div>
+      </div>
+      <img [src]="version.thumbnail" alt="version thumbnail" loading="lazy" />
+    </div>
+  </ng-container>
+</div>
