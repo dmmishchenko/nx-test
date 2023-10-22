@@ -50,22 +50,22 @@ describe('VersionsListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should dispatch LoadList action on initialization', () => {
-  //   const loadListSpy = spyOn(mockStore, 'dispatch');
-  //   fixture.detectChanges(); // Trigger component initialization
-  //   expect(loadListSpy).toHaveBeenCalledWith(new VersionsActions.LoadList());
-  // });
+  it('should dispatch LoadList action on initialization', () => {
+    const loadListSpy = jest.spyOn(mockStore, 'dispatch');
+    fixture.detectChanges(); // Trigger component initialization
+    expect(loadListSpy).toHaveBeenCalledWith(new VersionsActions.LoadList());
+  });
 
   it('should track items by id', () => {
     const version = { id: 1, name: 'Version 1' } as AssetVersion;
     expect(component.trackByFunc(0, version)).toEqual(1);
   });
 
-  // it('should dispatch GetDetail action on changeVersion', () => {
-  //   const getDetailSpy = spyOn(mockStore, 'dispatch');
-  //   component.changeVersion(1);
-  //   expect(getDetailSpy).toHaveBeenCalledWith(new VersionsActions.GetDetail(1));
-  // });
+  it('should dispatch GetDetail action on changeVersion', () => {
+    const getDetailSpy = jest.spyOn(mockStore, 'dispatch');
+    component.changeVersion(1);
+    expect(getDetailSpy).toHaveBeenCalledWith(new VersionsActions.GetDetail(1));
+  });
 
   it('should select versions and activeVersionId', async () => {
     fixture.detectChanges();
