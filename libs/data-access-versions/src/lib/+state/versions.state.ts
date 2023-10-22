@@ -9,7 +9,7 @@ import {
 import { patch } from '@ngxs/store/operators';
 import { tap } from 'rxjs';
 
-const VERSIONS_STATE_TOKEN = new StateToken<VersionsStateModel>('zoo');
+export const VERSIONS_STATE_TOKEN = new StateToken<VersionsStateModel>('zoo');
 
 @State<VersionsStateModel>({
   name: VERSIONS_STATE_TOKEN,
@@ -38,9 +38,11 @@ export class VersionsState {
     ctx: StateContext<VersionsStateModel>,
     { versionId }: VersionsActions.GetDetail
   ) {
-    return this.versionsRepositoryToken.getVersionDetail(versionId).pipe(
-      tap((response) => ctx.setState(patch({ versionDetail: response })))
-    );
+    return this.versionsRepositoryToken
+      .getVersionDetail(versionId)
+      .pipe(
+        tap((response) => ctx.setState(patch({ versionDetail: response })))
+      );
   }
 
   @Action(VersionsActions.GetVersionMessages)
@@ -48,10 +50,8 @@ export class VersionsState {
     ctx: StateContext<VersionsStateModel>,
     { versionId }: VersionsActions.GetVersionMessages
   ) {
-    return this.versionsRepositoryToken
-      .getVersionMessages(versionId)
-      .pipe(
-        tap((response) => ctx.setState(patch({ versionMessages: response })))
-      );
+    return this.versionsRepositoryToken.getVersionMessages(versionId).pipe(
+      tap((response) => ctx.setState(patch({ versionMessages: response })))
+    );
   }
 }
