@@ -1,4 +1,5 @@
 {
+  "extends": ["../../.eslintrc.base.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -23,7 +24,8 @@
             "prefix": "nx-test",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@typescript-eslint/no-namespace": "off"
       }
     },
     {
@@ -31,6 +33,5 @@
       "extends": ["plugin:@nx/angular-template"],
       "rules": {}
     }
-  ],
-  "extends": ["./.eslintrc.base.json"]
+  ]
 }
