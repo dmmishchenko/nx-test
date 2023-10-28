@@ -1,0 +1,19 @@
+<div class="asset">
+  <ng-container *ngIf="version$ | async as version; else emptyState">
+    <video
+      *ngIf="version.type === versionTypes.VIDEO"
+      #asset
+      preload="auto"
+      src="{{ version.url }}"
+      id="videoAsset_{{ version.id }}"
+    ></video>
+    <img
+      #asset
+      *ngIf="version.type === versionTypes.IMAGE"
+      src="{{ version.url }}"
+    />
+  </ng-container>
+  <ng-template #emptyState>
+    <div class="empty-asset"></div>
+  </ng-template>
+</div>

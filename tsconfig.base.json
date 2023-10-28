@@ -18,7 +18,8 @@
       "@nx-test/data-access-versions": [
         "libs/data-access-versions/src/index.ts"
       ],
-      "@nx-test/versions-list": ["libs/versions-list/src/index.ts"]
+      "@nx-test/versions-list": ["libs/versions-list/src/index.ts"],
+      "@nx-test/workspace": ["libs/workspace/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,17 @@
+.asset {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+video,
+img {
+  max-width: 300px;
+  height: 100%;
+}
+
+.empty-asset {
+  background-color: black;
+  width: 300px;
+  height: calc(100% - 32px);
+}
