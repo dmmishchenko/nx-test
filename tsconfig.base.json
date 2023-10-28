@@ -18,6 +18,7 @@
       "@nx-test/data-access-versions": [
         "libs/data-access-versions/src/index.ts"
       ],
+      "@nx-test/version-messages": ["libs/version-messages/src/index.ts"],
       "@nx-test/versions-list": ["libs/versions-list/src/index.ts"],
       "@nx-test/workspace": ["libs/workspace/src/index.ts"]
     }

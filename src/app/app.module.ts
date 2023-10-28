@@ -6,6 +6,7 @@ import { appRoutes } from './app.routes';
 import { NgxsModule } from '@ngxs/store';
 import { VersionsListModule } from '@nx-test/versions-list';
 import { WorkspaceModule } from '@nx-test/workspace';
+import { VersionMessagesModule } from '@nx-test/version-messages';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,6 +17,7 @@ import { WorkspaceModule } from '@nx-test/workspace';
     }),
     VersionsListModule,
     WorkspaceModule,
+    VersionMessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent],

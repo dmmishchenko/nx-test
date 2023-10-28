@@ -1,0 +1,14 @@
+<div class="messages-wrapper">
+  <ng-container *ngIf="messages$ | async as messages">
+    <ng-container *ngIf="messages.length; else emptyState">
+      <p class="message" *ngFor="let message of messages">
+        <small>{{ message.author }}</small>
+        <span>: &nbsp;</span>
+        <span>{{ message.text }}</span>
+      </p>
+    </ng-container>
+  </ng-container>
+  <ng-template #emptyState>
+    <p>No messages for this version</p>
+  </ng-template>
+</div>
